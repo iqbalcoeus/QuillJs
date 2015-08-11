@@ -1,6 +1,6 @@
 body {
   font-family: 'Helvetica', 'Arial', san-serif;
-  font-size: 13px;
+  font-size: 14px;
   padding: 25px;
 }
 #content-container {
@@ -9,7 +9,7 @@ body {
 }
 #formatting-container {
   background-color: black;
-  border-bottom: 1px solid #ccc;
+  border-bottom: 2px solid green;
   padding: 5px 12px;
 }
 #formatting-container .ql-active,
@@ -21,6 +21,6 @@ body {
   height: 600px;
 }
 #editor-wrapper {
-  border: 1px solid #aaa;
-  box-shadow: 0 0 2px 2px #ddd;
+  border: 2px solid green;
+  box-shadow: 0 0 1px 1px ;
 }

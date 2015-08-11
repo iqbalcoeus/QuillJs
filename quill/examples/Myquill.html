@@ -1,31 +1,36 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Quill Editor Demo</title>
-    <link rel="stylesheet" type="text/css" href="styles/style.css">
+    <title>My Quill</title>
+ 
+      <link rel="stylesheet" type="text/css" href="../quill.snow.css">
+    <link rel="stylesheet" type="text/css" href="styles/advanced.css">
     <meta charset="utf-8">
   </head>
   <body>
     <div id="content-container">
-      <div id="editor-wrapper">
-        <div id="formatting-container">
+       <div class="advanced-wrapper">
+          <div class="toolbar-container">
           <select title="Font" class="ql-font">
-            <option value="sans-serif" selected>Sans Serif</option>
+            <option value="sans-serif" >Sans Serif</option>
             <option value="Georgia, serif">Serif</option>
             <option value="Monaco, 'Courier New', monospace">Monospace</option>
+            <option value="Monaco">Monco</option>
+            <option value="Arial" >Arial</option>
+            <option value="New Roman"  selected>New Roman</option>
           </select>
           <select title="Size" class="ql-size">
             <option value="10px">Small</option>
-            <option value="14px" selected>Normal</option>
-            <option value="20px">Large</option>
-            <option value="32px">Huge</option>
+            <option value="16px" selected>Normal</option>
+            <option value="25px">Large</option>
+            <option value="35px">Huge</option>
           </select>
           <select title="Text Color" class="ql-color">
             <option value="rgb(255, 255, 255)">White</option>
             <option value="rgb(0, 0, 0)" selected>Black</option>
             <option value="rgb(255, 0, 0)">Red</option>
             <option value="rgb(0, 0, 255)">Blue</option>
-           
+            <option value="rgb(0, 255, 0)">Green</option>
             <option value="rgb(0, 128, 128)">Teal</option>
             <option value="rgb(255, 0, 255)">Magenta</option>
             <option value="rgb(255, 255, 0)">Yellow</option>
@@ -35,6 +40,7 @@
             <option value="rgb(0, 0, 0)">Black</option>
             <option value="rgb(255, 0, 0)">Red</option>
             <option value="rgb(0, 0, 255)">Blue</option>
+            <option value="rgb(0, 255, 0)">Green</option>
             <option value="rgb(0, 255, 0)">Lime</option>
             <option value="rgb(0, 128, 128)">Teal</option>
             <option value="rgb(255, 0, 255)">Magenta</option>
@@ -46,9 +52,10 @@
             <option value="right">Right</option>
             <option value="justify">Justify</option>
           </select>
-          <button title="Bold" class="ql-format-button ql-bold">Bold</button>
-          <button title="Italic" class="ql-format-button ql-italic">Italic</button>
-          <button title="Underline" class="ql-format-button ql-underline">Under</button>
+
+            <span class="ql-format-group"><span title="Bold" class="ql-format-button ql-bold"></span><span class="ql-format-separator"></span>
+            <span title="Italic" class="ql-format-button ql-italic"></span><span class="ql-format-separator"></span>
+            <span title="Underline" class="ql-format-button ql-underline"></span></span>
           <button title="Strikethrough" class="ql-format-button ql-strike">Strike</button>
           <button title="Link" class="ql-format-button ql-link">Link</button>
           <button title="Image" class="ql-format-button ql-image">Image</button>
@@ -58,6 +65,7 @@
         <div id="editor-container"></div>
       </div>
     </div>
+     <script type="text/javascript" src="scripts/advanced.js"></script>
     <script type="text/javascript" src="../quill.js"></script>
     <script type="text/javascript">
 
@@ -74,7 +82,6 @@
       editor.on('text-change', function(delta, source) {
         console.log('text-change', delta, source)
       });
-      editor.setText('Welcome to Quill\n');
     </script>
   </body>
 </html>

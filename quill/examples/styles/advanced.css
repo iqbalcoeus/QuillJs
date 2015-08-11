@@ -1,28 +1,28 @@
 .basic-wrapper,
 .advanced-wrapper {
-  border: 1px solid #ccc;
+  border: 2px solid black;
   float: left;
   margin-left: 3%;
   margin-top: 15px;
   margin-bottom: 15px;
 }
 .basic-wrapper {
-  width: 40%;
+  width: 15%;
 }
 .advanced-wrapper {
-  width: 50%;
+  width: 80%;
 }
 .editor-container {
-  height: 400px;
+  height: 100px;
 }
 .toolbar-container {
-  border-bottom: 1px solid #ccc;
+  border-bottom: 2px solid ;
 }
 .basic-wrapper .toolbar-container {
   padding: 8px 14px;
 }
 .basic-wrapper .toolbar-container .ql-active,
 .basic-wrapper .toolbar-container button:hover {
-  color: #008000;
+  color: red;
   font-weight: bold;
 }
