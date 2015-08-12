@@ -1,16 +1,14 @@
-.basic-wrapper,
+
 .advanced-wrapper {
   border: 2px solid black;
   float: left;
-  margin-left: 3%;
-  margin-top: 15px;
+  margin-left: 15%;
+  margin-top: 10%;
   margin-bottom: 15px;
 }
-.basic-wrapper {
-  width: 15%;
-}
+
 .advanced-wrapper {
-  width: 80%;
+  width: 50%;
 }
 .editor-container {
   height: 100px;

@@ -3,39 +3,10 @@
   <head>
     <title>Quill Pretty Editor Demo</title>
     <link rel="stylesheet" type="text/css" href="../quill.snow.css">
-    <link rel="stylesheet" type="text/css" href="styles/advanced.css">
+    <link rel="stylesheet" type="text/css" href="styles/custom.css">
     <meta charset="utf-8">
   </head>
   <body>
-    <div id="content-container">
-
-        <div class="basic-wrapper">
-        <div class="toolbar-container">
-          <select title="Font" class="ql-font">
-            <option value="sans-serif" selected>Sans Serif</option>
-            <option value="Georgia, serif">Serif</option>
-            <option value="Monaco, 'Courier New', monospace">Monospace</option>
-          </select>
-          <select title="Size" class="ql-size">
-            <option value="10px">Small</option>
-            <option value="13px" selected>Normal</option>
-            <option value="18px">Large</option>
-            <option value="32px">Huge</option>
-          </select>
-          <select title="Text Alignment" class="ql-align">
-            <option value="left" selected>Left</option>
-            <option value="center">Center</option>
-            <option value="right">Right</option>
-            <option value="justify">Justify</option>
-          </select>
-          <button title="Bold" class="ql-bold">Bold</button>
-          <button title="Italic" class="ql-italic">Italic</button>
-          <button title="Underline" class="ql-underline">Under</button>
-          <button title="List" class="ql-list">List</button>
-        </div>
-        <div class="editor-container"></div>
-      </div>
-
       <div class="advanced-wrapper">
         <div class="toolbar-container"><span class="ql-format-group">
             <select title="Font" class="ql-font">
@@ -48,11 +19,7 @@
               <option value="13px" selected>Normal</option>
               <option value="18px">Large</option>
               <option value="32px">Huge</option>
-            </select></span>
-            <span class="ql-format-group"><span title="Bold" class="ql-format-button ql-bold"></span><span class="ql-format-separator"></span>
-            <span title="Italic" class="ql-format-button ql-italic"></span><span class="ql-format-separator"></span>
-            <span title="Underline" class="ql-format-button ql-underline"></span></span>
-            <span class="ql-format-group">
+            </select></span><span class="ql-format-group"><span title="Bold" class="ql-format-button ql-bold"></span><span class="ql-format-separator"></span><span title="Italic" class="ql-format-button ql-italic"></span><span class="ql-format-separator"></span><span title="Underline" class="ql-format-button ql-underline"></span></span><span class="ql-format-group">
             <select title="Text Color" class="ql-color">
               <option value="rgb(0, 0, 0)" selected></option>
               <option value="rgb(230, 0, 0)"></option>
@@ -136,9 +103,8 @@
         <div class="editor-container"></div>
       </div>
     </div>
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.js"></script>
-    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/lodash.js/2.4.1/lodash.js"></script>
+
     <script type="text/javascript" src="../quill.js"></script>
-    <script type="text/javascript" src="scripts/advanced.js"></script>
+    <script type="text/javascript" src="scripts/custom.js"></script>
   </body>
 </html>
