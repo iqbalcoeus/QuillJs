@@ -1,0 +1,55 @@
+<?php
+
+function simple_cv_menu() {
+  $items = array();
+
+  $items['build/cv'] = array( //this creates a URL that will call this form at "examples/form-example"
+    'title' => 'Build CV', //page title
+    'description' => 'Create a basic CV',
+    'page callback' => 'drupal_get_form', //this is the function that will be called when the page is accessed.  for a form, use drupal_get_form
+    'page arguments' => array('simple_cv_form'), //put the name of the form here
+    'access callback' => TRUE
+  );
+
+  return $items;
+}
+
+function simple_cv_form($form, &$form_state) {
+  
+ $form['price'] = array(
+    '#type' => 'textfield', //you can find a list of available types in the form api
+    '#title' => 'What is Your Price?',
+    '#size' => 10,
+    '#maxlength' => 10,
+    '#required' => TRUE, //make this field required 
+  );
+ $form['name']=array(
+
+  '#type' => 'textfield',
+  '#title' => 'Your Full Name:',
+  '#size' =>20,
+  '#maxlength' =>30,
+  '#required' =>TRUE,
+  );
+
+  $form['submit_button'] = array(
+    '#type' => 'submit',
+    '#value' => t('Click Here!'),
+  );
+  
+  return $form;
+}
+
+function simple_cv_form_validate($form, &$form_state) {
+  if (!($form_state['values']['price'] > 0)){
+    form_set_error('price', t('Price must be a positive number.'));
+  }
+
+  if(strlen(($form_state['values']['name'] >20))){
+    form_set_error('name',t('Name should be less than 20 characters.'));
+  }
+}
+
+function simple_cv_form_submit($form, &$form_state) {
+}
+?>

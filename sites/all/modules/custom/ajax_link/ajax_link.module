@@ -1,0 +1,61 @@
+<?php 
+/**
+ * Implements hook_menu().
+ */
+function ajax_link_menu() {
+  $items = array();
+ 
+  $items['ajax-test'] = array(
+    'title' => 'Ajax Test',
+    'type' => MENU_NORMAL_ITEM,
+    'page callback' => 'ajax_link_page',
+    'access arguments' => array('access content'),
+  );
+  $items['my-ajax-test/%'] = array(
+    'title' => 'Ajax test callback',
+    'type' => MENU_CALLBACK,
+    'page callback' => 'ajax_link_callback',
+    'page arguments' => array(1),
+    'access arguments' => array('access content'),
+  );
+  return $items;
+}
+function ajax_link_page(){
+
+	$link = array('#type' =>'link',
+					'#title'=>t('Total Users'),
+					'#href'=>'my-ajax-test/nojs',
+					'#prefix'=>'<div id="ajax-link">',
+					'#suffix'=>'</div><div id="ajax-display"></div>',
+					'#ajax'=>array(
+						'effect'=>'slide',
+						) , 
+				);
+	return $link;
+}
+/**
+ * Ajax callback to display the current time.
+ */
+function ajax_link_callback($ajax) {
+  // Do any database queries, processing, etc.
+  $time =db_query("SELECT count(1) from {users}")->fetchField();
+
+  if ($ajax == 'ajax') {
+    $commands = array();
+    // Ajax command to replace the #ajax-display element with the current time.
+    $commands[] = ajax_command_replace('#ajax-display', "<div id='ajax-display'>" . ($time) . "</div>");
+    // Add a visual "changed" marker to the '#ajax-display' element.
+    $commands[] = ajax_command_changed('#ajax-display');
+     $commands[] = ajax_command_invoke(NULL, "ajax_link");
+    // Menu 'page callback' and #ajax['callback'] functions are supposed to
+    // return render arrays. If returning an Ajax commands array, it must be
+    // encapsulated in a render array structure.
+    ajax_deliver(array('#type' => 'ajax', '#commands' => $commands));
+  }
+  else {
+    // No ajax, just display the time on a page using renderable array.
+    return array(
+      '#markup' => $time,
+    );
+  }
+}

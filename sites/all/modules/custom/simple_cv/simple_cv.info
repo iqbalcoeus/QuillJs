@@ -1,0 +1,5 @@
+name= Simple CV
+description=A  a simple module for CV
+package= custom
+files[] = simple_cv.module
+core=7.x

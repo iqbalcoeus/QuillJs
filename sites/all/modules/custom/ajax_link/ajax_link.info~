@@ -1,0 +1,4 @@
+name=Ajax Link
+description=A simple module just for practicing ajax framework.
+core=7.x
+scripts[] = ajax_link.js
